@@ -71,22 +71,21 @@ Multiple screenshots are retained for WEB-005 because Lighthouse identified seve
 
 The planned monorepo structure is:
 
-accessibility-audit-project/
+rabtech-fullstack-internship/
 │
 ├── client/
 │   └── README.md
-│
 ├── server/
 │   └── README.md
-│
 ├── docs/
-│   ├── audit-report.md
-│   ├── architecture.md
-│   └── screenshots/
-│
+│   ├── audit-report/
+│   │   └── accessibility-findings.md
+│   └── architecture.md
 ├── tests/
 │   └── README.md
-│
+├── lighthouse-screenshots/
+├── accessibility-audit.xlsx
+├── keyboard-navigation.xlsx
 └── README.md
 
 Project boundaries
