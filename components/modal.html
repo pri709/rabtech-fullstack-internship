@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Modal Dialog</title>
+</head>
+<body>
+
+    <main>
+        <h1>Employee Management</h1>
+
+        <button type="button" id="open-modal">
+            Delete Employee
+        </button>
+
+        <dialog
+            id="confirm-dialog"
+            aria-labelledby="dialog-title"
+            aria-describedby="dialog-description"
+        >
+            <h2 id="dialog-title">Confirm Deletion</h2>
+
+            <p id="dialog-description">
+                Are you sure you want to delete this employee?
+            </p>
+
+            <form method="dialog">
+                <button type="submit" value="cancel">
+                    Cancel
+                </button>
+
+                <button type="submit" value="confirm">
+                    Confirm
+                </button>
+            </form>
+        </dialog>
+    </main>
+<script>
+    const dialog = document.getElementById("confirm-dialog");
+    const openButton = document.getElementById("open-modal");
+
+    openButton.addEventListener("click", function () {
+        dialog.showModal();
+    });
+</script>
+</body>
+</html>
