@@ -74,18 +74,21 @@ The planned monorepo structure is:
 rabtech-fullstack-internship/
 │
 ├── client/
-│   └── README.md
+│
 ├── server/
-│   └── README.md
+│
 ├── docs/
-│   ├── audit-report/
-│   │   └── accessibility-findings.md
-│   └── architecture.md
+│
 ├── tests/
-│   └── README.md
+│
 ├── lighthouse-screenshots/
+│
+├── Keyboard-navigation.xlsx
+│
 ├── accessibility-audit.xlsx
-├── keyboard-navigation.xlsx
+│
+├── .gitignore
+│
 └── README.md
 
 Project boundaries
