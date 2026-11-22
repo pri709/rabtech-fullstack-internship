@@ -94,3 +94,51 @@ The final implementation will be developed in later internship tasks.
 - Testing and deployment: Pending.
 
 This architecture will be updated as the project develops.
+
+7. Local Setup Instructions
+
+Prerequisites
+
+- Visual Studio Code
+- Git
+- A modern web browser
+- Node.js and npm (required for the planned backend development)
+
+Getting Started
+
+1. Clone the GitHub repository:
+   
+   "git clone https://github.com/pri709/rabtech-fullstack-internship.git"
+
+2. Open the project folder in Visual Studio Code.
+
+3. Explore the following directories:
+   
+   - "client/" – frontend resources.
+   - "server/" – backend resources.
+   - "docs/" – documentation and audit reports.
+   - "tests/" – testing resources.
+
+4. Frontend and backend application setup instructions will be added when their implementations are created.
+
+Current Setup Status
+
+The repository currently contains the documentation and initial project structure. The application itself is not yet implemented.
+
+8. First Vertical Feature Slice
+
+The first planned vertical feature slice is an accessible issue-tracking dashboard.
+
+It will connect the frontend, backend and data layer through one complete user workflow.
+
+Planned workflow:
+
+1. A user opens the accessibility dashboard.
+2. The frontend requests accessibility issues from the backend.
+3. The backend returns issue information through a REST API.
+4. The frontend displays the issues.
+5. The user searches, filters or views an issue.
+6. The user updates an issue's status.
+7. The updated information is reflected in the dashboard.
+
+This feature will be implemented incrementally in the subsequent internship tasks.
