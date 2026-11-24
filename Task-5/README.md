@@ -121,7 +121,10 @@ Developer: Prithika Thinakaran
 
 GitHub Repository: https://github.com/pri709/rabtech-fullstack-internship
 
-Live Application: To be added after deployment.
+Live Application: 
+## Live Application
+
+https://rabtech-fullstack-internship.vercel.app/
 
 ---
 
