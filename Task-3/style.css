@@ -1,0 +1,313 @@
+/* =================================
+   TASK 3 - DESIGN TOKENS
+================================= */
+
+:root {
+    /* Primary brand colors */
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --accent-color: #06b6d4;
+
+    /* Background colors */
+    --background-color: #dbeafe;
+    --surface-color: #ffffff;
+
+    /* Text colors */
+    --text-color: #1e293b;
+    --muted-text-color: #64748b;
+
+    /* Typography scale */
+    --font-family: Arial, sans-serif;
+    --font-small: 0.875rem;
+    --font-medium: 1rem;
+    --font-large: 1.5rem;
+    --font-heading: 2rem;
+
+    /* Spacing scale */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    /* Border radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    /* Light theme */
+--card-background: rgba(255, 255, 255, 0.75);
+--border-color: rgba(255, 255, 255, 0.5);
+--header-background: #ffffff;
+
+/* Dark theme variables */
+
+[data-theme="dark"] {
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-color: #f8fafc;
+    --muted-text-color: #cbd5e1;
+
+    --card-background: rgba(30, 41, 59, 0.85);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --header-background: #1e293b;
+}
+}
+/* =================================
+   GLOBAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: var(--font-medium);
+    line-height: 1.6;
+}
+
+/* =================================
+   COMMON COMPONENT STYLES
+================================= */
+
+h1, h2, h3 {
+    color: var(--text-color);
+    margin-bottom: var(--space-md);
+}
+
+p {
+    color: var(--muted-text-color);
+    margin-bottom: var(--space-sm);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+/* =================================
+   RESPONSIVE DASHBOARD LAYOUT
+================================= */
+
+.dashboard-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    min-height: 100vh;
+    align-content: start;
+    row-gap: var(--space-md);
+}
+/* =================================
+   DASHBOARD GRID AREAS
+================================= */
+
+header {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg);
+    background-color: var(--header-background);
+    box-shadow: var(--shadow-soft);
+}
+
+aside {
+    grid-column: 1;
+    padding: var(--space-lg);
+    background-color: var(--surface-color);
+}
+
+aside nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+main {
+    grid-column: 2;
+    padding: var(--space-lg);
+}
+
+footer {
+    grid-column: 1 / -1;
+    padding: var(--space-md);
+    text-align: center;
+    background-color: var(--surface-color);
+}
+/* =================================
+   DASHBOARD CONTENT GRID
+================================= */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    align-content: start;
+}
+
+main section {
+    background-color: var(--surface-color);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+/* =================================
+   TABLET RESPONSIVENESS
+================================= */
+
+@media (max-width: 1024px) {
+    .dashboard-layout {
+        grid-template-columns: 200px 1fr;
+    }
+}
+
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 768px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    aside {
+        grid-column: 1;
+    }
+
+    aside nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+    }
+}
+/* =================================
+   MODERN GLASSMORPHISM EFFECTS
+================================= */
+
+main section {
+    background: var(--card-background);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+
+main section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+/* =================================
+   MOBILE OPTIMIZATION
+================================= */
+
+@media (max-width: 320px) {
+
+    header {
+        padding: var(--space-sm);
+    }
+
+    header h1 {
+        font-size: var(--font-large);
+        text-align: center;
+    }
+
+    header nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+
+    aside {
+        padding: var(--space-md);
+    }
+
+    main {
+        padding: var(--space-sm);
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    main section {
+        padding: var(--space-md);
+        min-width: 0;
+    }
+
+    footer {
+        padding: var(--space-sm);
+    }
+}
+
+/* Prevent unwanted horizontal overflow */
+
+.dashboard-layout,
+main,
+main section {
+    min-width: 0;
+    max-width: 100%;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+/* =================================
+   ACCESSIBLE SKIP LINK POSITIONING
+================================= */
+
+.dashboard-layout {
+    position: relative;
+}
+
+.dashboard-layout > a[href="#main-content"] {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1000;
+}
