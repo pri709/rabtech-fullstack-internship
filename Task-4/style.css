@@ -1,0 +1,111 @@
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Search and filter controls */
+main > input,
+main > select {
+    padding: 12px;
+    margin: 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    max-width: 100%;
+}
+
+/* Product grid */
+#productList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Product cards */
+#productList article {
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow-wrap: anywhere;
+}
+
+/* Product images */
+#productList img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+/* Loading skeleton layout */
+.skeleton-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Skeleton card */
+.skeleton-card {
+    height: 220px;
+    border-radius: 12px;
+    background: linear-gradient(
+        90deg,
+        #e2e8f0 25%,
+        #f8fafc 50%,
+        #e2e8f0 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+/* Animation */
+@keyframes skeleton-loading {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    main > input,
+    main > select {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    #productList {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #productList article {
+        padding: 12px;
+    }
+
+}
